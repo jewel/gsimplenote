@@ -1,0 +1,25 @@
+#!/usr/bin/ruby
+
+require 'gtk2'
+require 'gtksourceview2'
+
+window = Gtk::Window.new(Gtk::Window::TOPLEVEL)
+window.resizable = true
+window.title = "Note"
+window.set_size_request 250, 150
+window.set_decorated false
+window.keep_above = true
+window.signal_connect :delete_event do
+  Gtk.main_quit
+end
+
+textview = Gtk::SourceView.new
+textview.border_width = 5
+textview.wrap_mode = 3
+textview.indent_width = 2
+textview.auto_indent = true
+textview.indent_on_tab = true
+
+window.add textview
+window.show_all
+Gtk.main
