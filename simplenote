@@ -13,6 +13,13 @@ window.signal_connect :delete_event do
   Gtk.main_quit
 end
 
+ag = Gtk::AccelGroup.new
+ag.connect Gdk::Keyval::GDK_W, Gdk::Window::CONTROL_MASK, Gtk::ACCEL_VISIBLE do
+  Gtk.main_quit
+end
+window.add_accel_group ag
+
+
 textview = Gtk::SourceView.new
 textview.border_width = 5
 textview.wrap_mode = 3
