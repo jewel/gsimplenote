@@ -2,3 +2,5 @@ Simplenote is a very simple sticky-note application for GTK2.
 
 It doesn't have a window border, the ability to save, a scrollbar, etc.  These
 notes are meant to be temporary.
+
+You'll need the libgtksourceview2-ruby package.
